@@ -1,0 +1,98 @@
+.planets{
+    display: none;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.orbits{
+    position: relative;
+    top:100px;
+    display: none;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.orbit{
+    position: absolute;
+    content: "";
+    border: 2px solid red;
+    border-radius: 50%;
+}
+.orbit:nth-child(1){ /*mercury*/
+    left: -235px;
+    min-width: 325px;
+    min-height: 300px;
+}
+.orbit:nth-child(2){/*venus*/
+    left: -200px;
+    min-width: 350px;
+    min-height: 290px;
+}
+.orbit:nth-child(3){/*Earth*/
+    top: -5px;
+    left: -187px;
+    min-width: 411px;
+    min-height: 306px;
+}
+.orbit:nth-child(4){/*mars*/
+    left: -215px;
+    top: -12px;
+    min-width: 506px;
+    min-height: 330px;
+}
+.orbit:nth-child(5){/*jupiter*/
+    left: -130px;
+    top: -50px;
+    min-width: 545px;
+    min-height: 425px;
+}
+.orbit:nth-child(6){/*saturn*/
+    left: -135px;
+    top: -70px;
+    min-width: 625px;
+    min-height: 474px;
+}
+.orbit:nth-child(7){/*uranus*/
+    left: -135px;
+    top: -90px;
+    min-width: 680px;
+    min-height: 515px;
+}
+.orbit:nth-child(8){/*neptune*/
+    left: -135px;
+    top: -125px;
+    min-width: 760px;
+    min-height: 575px;
+}
+.mercury{
+    
+}
+.venus{
+
+}
+.earth{
+
+}
+.mars{
+    
+}
+.jupiter{
+    
+}
+.saturn{
+    
+}
+.uranus{
+    
+}
+.neptune{
+    
+}
+.sphere{
+    display: flex;
+    perspective: 1000px;
+}
+.face{
+    width: 100px;
+    height: 100px;
+    border: 2px solid red;
+    border-radius: 50%;
+}
