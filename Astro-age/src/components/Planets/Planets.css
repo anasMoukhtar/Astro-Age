@@ -1,0 +1,135 @@
+/* Planets Container */
+.planets-container {
+    width: 100%;
+    min-height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow-x: auto;
+}
+
+.planets {
+    display: flex;
+    gap: 5rem;
+    padding: 2rem 0;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.planet-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 10px 5px;
+    margin: -10px -5px; /* Negative margin to compensate for padding */
+}
+
+/* Planet Styling */
+.planet {
+    width: var(--planet-size, 40px);
+    height: var(--planet-size, 40px);
+    background: var(--planet-color, #fff);
+    border-radius: 50%;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.planet-wrapper:hover .planet {
+    transform: translateY(-10px) scale(1.2);
+    box-shadow: 0 10px 25px rgba(255, 255, 255, 0.3);
+}
+
+/* Planet Names */
+.planet-name {
+    position: absolute;
+    top: -25px;
+    color: white;
+    font-size: 12px;
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 2px 8px;
+    border-radius: 10px;
+    text-align: center;
+    width: max-content;
+}
+
+.planet-wrapper:hover .planet-name {
+    opacity: 1;
+}
+
+/* Saturn's Rings */
+.rings {
+    position: absolute;
+    width: calc(var(--planet-size, 40px) * 1.8);
+    height: calc(var(--planet-size, 40px) * 0.4);
+    background: transparent;
+    border: 2px solid #F5E4B2;
+    border-radius: 50%;
+    transform: rotate(20deg);
+    z-index: -1;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+    .planets {
+        gap: 1.5rem;
+    }
+    
+    .planet {
+        --planet-size: 35px;
+    }
+}
+@media (max-width: 768px) {
+    .planets {
+        gap: 1rem;
+        padding: 1.5rem 0;
+        flex-direction: column;
+    }
+    
+    .planet {
+        --planet-size: 30px;
+    }
+    
+    .planet-name {
+        font-size: 10px;
+        top: -20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .planets {
+        gap: 0.75rem;
+        padding: 1rem 0.5rem;
+    }
+    .ageAtPlanet-text{
+        display: block;
+        font-size: 10px;
+        line-height: 1;
+
+    }
+    .planet {
+        --planet-size: 25px;
+    }
+    
+    .planet-name {
+        font-size: 9px;
+        top: -18px;
+        padding: 1px 4px;
+    }
+    
+    .rings {
+        width: calc(var(--planet-size, 25px) * 1.8);
+        height: calc(var(--planet-size, 25px) * 0.4);
+    }
+}
